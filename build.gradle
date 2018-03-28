@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://repo-proxy.jpmchase.net/maven/content/groups/jpmc-public" }
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:+"
+    }
+}
+
+
+group 'com.samples'
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven { url "http://repo-proxy.jpmchase.net/maven/content/groups/jpmc-public" }
+}
+
+
+dependencies {
+    compile 'ma.glasnost.orika:orika-core:1.5.1'
+    compile 'org.projectlombok:lombok:+'
+}
